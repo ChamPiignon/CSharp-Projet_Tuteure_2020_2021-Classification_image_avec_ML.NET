@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D19869A3-8F4D-44AC-8511-BB0FAFA06043}</ProjectGuid>
+    <ProjectGuid>{73AC2C56-6D55-4CC3-A126-1FA328D66AE4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>AppWindow</RootNamespace>
     <AssemblyName>AppWindow</AssemblyName>
@@ -53,6 +53,7 @@
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -92,6 +93,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bibliotheque\Bibliotheque.csproj">
+      <Project>{51ae755a-ea06-4374-bd54-70af5a5ef72b}</Project>
+      <Name>Bibliotheque</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
