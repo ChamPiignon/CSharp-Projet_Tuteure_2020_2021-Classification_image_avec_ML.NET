@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kuQVHGRxDB3PzRB0c2nSCazlJd2g/7Tdqlmst60ekhGjyDFzRt9n3DKOLmO0RQaDjIFv5JyD4tuUhee2OCKKfg==",
+  "dgSpecHash": "qn6bD3i+V2KV3WclVk0OyEnjozGg7+pUtofIwqRMYUUPVDQl8hCdo7Nh0MtIUhgnriS6afFI83YIoj+52+0ZgQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\utilisateur\\Desktop\\ClassificationImageMLNET\\ApplicationWindow\\ApplicationWindow.csproj",
+  "projectFilePath": "C:\\Users\\utilisateur\\Desktop\\root\\Work\\C#\\ProjetTuteureG9\\ApplicationWindow\\ApplicationWindow.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\utilisateur\\.nuget\\packages\\google.protobuf\\3.11.4\\google.protobuf.3.11.4.nupkg.sha512",
     "C:\\Users\\utilisateur\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",

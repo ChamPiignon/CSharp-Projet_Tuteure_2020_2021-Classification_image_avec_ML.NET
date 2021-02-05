@@ -1,1 +1,9 @@
 .vs
+ApplicationWindow/obj
+ApplicationWindow/bin
+
+BibliothequeDeClasse/obj
+BibliothequeDeClasse/bin
+
+ClassificationImageMLNET/obj
+ClassificationImageMLNET/bin

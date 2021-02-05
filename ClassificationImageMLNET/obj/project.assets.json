@@ -6034,11 +6034,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\utilisateur\\Desktop\\ClassificationImageMLNET\\ClassificationImageMLNET\\ClassificationImageMLNET.csproj",
+      "projectUniqueName": "C:\\Users\\utilisateur\\Desktop\\root\\Work\\C#\\ProjetTuteureG9\\ClassificationImageMLNET\\ClassificationImageMLNET.csproj",
       "projectName": "ClassificationImageMLNET",
-      "projectPath": "C:\\Users\\utilisateur\\Desktop\\ClassificationImageMLNET\\ClassificationImageMLNET\\ClassificationImageMLNET.csproj",
+      "projectPath": "C:\\Users\\utilisateur\\Desktop\\root\\Work\\C#\\ProjetTuteureG9\\ClassificationImageMLNET\\ClassificationImageMLNET.csproj",
       "packagesPath": "C:\\Users\\utilisateur\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\utilisateur\\Desktop\\ClassificationImageMLNET\\ClassificationImageMLNET\\obj\\",
+      "outputPath": "C:\\Users\\utilisateur\\Desktop\\root\\Work\\C#\\ProjetTuteureG9\\ClassificationImageMLNET\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -6059,8 +6059,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\utilisateur\\Desktop\\ClassificationImageMLNET\\BibliothequeDeClasse\\BibliothequeDeClasse.csproj": {
-              "projectPath": "C:\\Users\\utilisateur\\Desktop\\ClassificationImageMLNET\\BibliothequeDeClasse\\BibliothequeDeClasse.csproj"
+            "C:\\Users\\utilisateur\\Desktop\\root\\Work\\C#\\ProjetTuteureG9\\BibliothequeDeClasse\\BibliothequeDeClasse.csproj": {
+              "projectPath": "C:\\Users\\utilisateur\\Desktop\\root\\Work\\C#\\ProjetTuteureG9\\BibliothequeDeClasse\\BibliothequeDeClasse.csproj"
             }
           }
         }

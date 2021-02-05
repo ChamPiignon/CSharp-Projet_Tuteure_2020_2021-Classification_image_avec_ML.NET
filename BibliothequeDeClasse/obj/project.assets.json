@@ -6017,11 +6017,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\utilisateur\\Desktop\\ClassificationImageMLNET\\BibliothequeDeClasse\\BibliothequeDeClasse.csproj",
+      "projectUniqueName": "C:\\Users\\utilisateur\\Desktop\\root\\Work\\C#\\ProjetTuteureG9\\BibliothequeDeClasse\\BibliothequeDeClasse.csproj",
       "projectName": "BibliothequeDeClasse",
-      "projectPath": "C:\\Users\\utilisateur\\Desktop\\ClassificationImageMLNET\\BibliothequeDeClasse\\BibliothequeDeClasse.csproj",
+      "projectPath": "C:\\Users\\utilisateur\\Desktop\\root\\Work\\C#\\ProjetTuteureG9\\BibliothequeDeClasse\\BibliothequeDeClasse.csproj",
       "packagesPath": "C:\\Users\\utilisateur\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\utilisateur\\Desktop\\ClassificationImageMLNET\\BibliothequeDeClasse\\obj\\",
+      "outputPath": "C:\\Users\\utilisateur\\Desktop\\root\\Work\\C#\\ProjetTuteureG9\\BibliothequeDeClasse\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
