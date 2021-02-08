@@ -17,6 +17,8 @@ namespace ImageClassification.ModelScorer
         private readonly MLContext mlContext;
         private static string ImageReal = nameof(ImageReal);
 
+        //public PredictionEngine<ImageNetData, ImageNetPrediction> Model { get; set; }
+
         public TFModelScorer(string dataLocation, string imagesFolder, string modelLocation, string labelsLocation)
         {
             this.dataLocation = dataLocation;
@@ -24,6 +26,8 @@ namespace ImageClassification.ModelScorer
             this.modelLocation = modelLocation;
             this.labelsLocation = labelsLocation;
             mlContext = new MLContext();
+
+            //Model = LoadModel(dataLocation, imagesFolder, modelLocation);
         }
 
         public struct ImageNetSettings
@@ -53,15 +57,17 @@ namespace ImageClassification.ModelScorer
             var predictions = PredictDataUsingModel(dataLocation, imagesFolder, labelsLocation, model).ToArray();
 
         }
+        public ImageNetDataProbability[] Score(string imagePath)
+        {
+            var model = LoadModel(dataLocation, imagesFolder, modelLocation);
+
+            var predictions = PredictImageUsingModel(dataLocation, imagePath, labelsLocation, model).ToArray();
+
+            return predictions;
+        }
 
         private PredictionEngine<ImageNetData, ImageNetPrediction> LoadModel(string dataLocation, string imagesFolder, string modelLocation)
-        {
-            ConsoleWriteHeader("Read model");
-            Console.WriteLine($"Model location: {modelLocation}");
-            Console.WriteLine($"Images folder: {imagesFolder}");
-            Console.WriteLine($"Training file: {dataLocation}");
-            Console.WriteLine($"Default parameters: image size=({ImageNetSettings.imageWidth},{ImageNetSettings.imageHeight}), image mean: {ImageNetSettings.mean}");
-
+        { 
             var data = mlContext.Data.LoadFromTextFile<ImageNetData>(dataLocation, hasHeader: true);
 
             var pipeline = mlContext.Transforms.LoadImages(outputColumnName: "input", imageFolder: imagesFolder, inputColumnName: nameof(ImageNetData.ImagePath))
@@ -104,6 +110,24 @@ namespace ImageClassification.ModelScorer
                 imageData.ConsoleWrite();
                 yield return imageData;
             }
+        }
+        protected IEnumerable<ImageNetDataProbability> PredictImageUsingModel(string testLocation,
+                                                                  string imageFile,
+                                                                  string labelsLocation,
+                                                                  PredictionEngine<ImageNetData, ImageNetPrediction> model)
+        {
+            var labels = ModelHelpers.ReadLabels(labelsLocation);
+
+            var testData = new ImageNetData { ImagePath = imageFile };
+
+            var probs = model.Predict(testData).PredictedLabels;
+            var imageData = new ImageNetDataProbability()
+            {
+                ImagePath = testData.ImagePath,
+                Label = testData.Label
+            };
+            (imageData.PredictedLabel, imageData.Probability) = GetBestLabel(labels, probs);
+            yield return imageData;
         }
     }
 }

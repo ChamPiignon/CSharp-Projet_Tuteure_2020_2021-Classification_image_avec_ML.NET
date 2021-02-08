@@ -1,9 +1,6 @@
 .vs
-ApplicationWindow/obj
-ApplicationWindow/bin
+ImageClassification/obj
+ImageClassification/bin
 
-BibliothequeDeClasse/obj
-BibliothequeDeClasse/bin
-
-ClassificationImageMLNET/obj
-ClassificationImageMLNET/bin
+TFModelScorerWPF/obj
+TFModelScorerWPF/bin
