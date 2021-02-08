@@ -23,7 +23,7 @@ namespace ImageClassification.Score
 
         public Manager()
         {
-            assetsRelativePath = @"../../../assets";//Relative path
+            assetsRelativePath = @"../../../assets";
             assetsPath = GetAbsolutePath(assetsRelativePath);
             tagsTsv = Path.Combine(assetsPath, "inputs", "images", "tags.tsv");
             imagesFolder = Path.Combine(assetsPath, "inputs", "images");
@@ -36,16 +36,13 @@ namespace ImageClassification.Score
         {
             try
             {
-                var modelScorer = new TFModelScorer(tagsTsv, imagesFolder, inceptionPb, labelsTxt);
                 foreach (string imagePath in Directory.GetFiles(folderPath))
                 {
                     if (Regex.IsMatch(imagePath, @".jpg|.jpeg|.jpe|.jfif|.png|.bin$"))
                     {
-                        Debug.WriteLine(imagePath);
-                        ImagePrediction.Add(modelScorer.Score(imagePath)[0]);
+                        PredictImage(imagePath);
                     }
                 }
-
             }
             catch (Exception e)
             {
@@ -57,6 +54,7 @@ namespace ImageClassification.Score
             try
             {
                 var modelScorer = new TFModelScorer(tagsTsv, imagesFolder, inceptionPb, labelsTxt);
+                Debug.WriteLine(imagePath);
                 ImagePrediction.Add(modelScorer.Score(imagePath)[0]);
             }
             catch (Exception e)

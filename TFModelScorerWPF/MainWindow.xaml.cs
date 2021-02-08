@@ -60,7 +60,6 @@ namespace AppWindow
                 if (folderOpen) Manager.PredictFolder(pathTextBlock.Text);
                 else Manager.PredictImage(pathTextBlock.Text);
             }
-
         }
     }
 }
