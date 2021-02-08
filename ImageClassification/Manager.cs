@@ -56,7 +56,7 @@ namespace ImageClassification.Score
             {
                 var modelScorer = new TFModelScorer(tagsTsv, imagesFolder, inceptionPb, labelsTxt);
                 Debug.WriteLine(imagePath);
-                ImagePrediction.Add(modelScorer.Score(imagePath)[0]);
+                ImagePrediction.Add(modelScorer.ScoreImage(imagePath)[0]);
             }
             catch (Exception e)
             {

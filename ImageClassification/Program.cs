@@ -3,6 +3,7 @@ using System;
 using System.IO;
 
 
+
 namespace ImageClassification
 {
     public class Program
@@ -20,7 +21,7 @@ namespace ImageClassification
             try
             {
                 var modelScorer = new TFModelScorer(tagsTsv, imagesFolder, inceptionPb, labelsTxt);
-                modelScorer.Score();
+                //modelScorer.Score();
 
             }
             catch (Exception ex)
