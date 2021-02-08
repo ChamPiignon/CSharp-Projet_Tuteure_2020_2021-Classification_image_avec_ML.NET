@@ -32,13 +32,16 @@ namespace ImageClassification.Score
             ImagePrediction = new ObservableCollection<ImageNetDataProbability>();
         }
 
-        public void PredictFolder(string imagePath)
+        public void PredictFolder(string path)
         {
             try
             {
                 var modelScorer = new TFModelScorer(tagsTsv, imagesFolder, inceptionPb, labelsTxt);
-                //ImagePrediction.Add();
 
+                foreach (ImageNetDataProbability image in modelScorer.ScoreFolder(path))
+                {
+                    ImagePrediction.Add(image);
+                }
             }
             catch (Exception ex)
             {
@@ -50,7 +53,7 @@ namespace ImageClassification.Score
             try
             {
                 var modelScorer = new TFModelScorer(tagsTsv, imagesFolder, inceptionPb, labelsTxt);
-                ImagePrediction.Add(modelScorer.Score(imagePath)[0]);
+                ImagePrediction.Add(modelScorer.ScoreImage(imagePath)[0]);
             }
             catch (Exception ex)
             {

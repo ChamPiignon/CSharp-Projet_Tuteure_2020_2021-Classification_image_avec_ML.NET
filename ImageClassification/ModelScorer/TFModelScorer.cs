@@ -50,14 +50,15 @@ namespace ImageClassification.ModelScorer
             public const string outputTensorName = "softmax2";
         }
 
-        public void Score()
+        public ImageNetDataProbability[] ScoreFolder(string path)
         {
             var model = LoadModel(dataLocation, imagesFolder, modelLocation);
 
-            var predictions = PredictDataUsingModel(dataLocation, imagesFolder, labelsLocation, model).ToArray();
+            var predictions = PredictDataUsingModel(dataLocation, path, labelsLocation, model).ToArray();
 
+            return predictions;
         }
-        public ImageNetDataProbability[] Score(string imagePath)
+        public ImageNetDataProbability[] ScoreImage(string imagePath)
         {
             var model = LoadModel(dataLocation, imagesFolder, modelLocation);
 
@@ -84,19 +85,16 @@ namespace ImageClassification.ModelScorer
             return predictionEngine;
         }
 
-        protected IEnumerable<ImageNetData> PredictDataUsingModel(string testLocation, 
+        protected IEnumerable<ImageNetDataProbability> PredictDataUsingModel(string testLocation, 
                                                                   string imagesFolder, 
                                                                   string labelsLocation, 
                                                                   PredictionEngine<ImageNetData, ImageNetPrediction> model)
         {
-            ConsoleWriteHeader("Classify images");
-            Console.WriteLine($"Images folder: {imagesFolder}");
-            Console.WriteLine($"Training file: {testLocation}");
-            Console.WriteLine($"Labels file: {labelsLocation}");
 
             var labels = ModelHelpers.ReadLabels(labelsLocation);
 
-            var testData = ImageNetData.ReadFromCsv(testLocation, imagesFolder);///////////////////////////////////////Chargement des images
+            //var testData = ImageNetData.ReadFromCsv(testLocation, imagesFolder);///////////////////////////////////////Chargement des images
+            var testData = ImageNetData.Read(imagesFolder);
 
             foreach (var sample in testData)
             {

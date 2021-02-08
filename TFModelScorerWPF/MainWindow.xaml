@@ -33,7 +33,7 @@
                                     <DropShadowEffect ShadowDepth="1"/>
                                 </Border.Effect>
                                 <Border.Background>
-                                    <ImageBrush ImageSource="/broccoli.jpg"/>
+                                    <ImageBrush ImageSource="{Binding ImagePath}"/>
                                 </Border.Background>
                             </Border>
                             <TextBlock Margin="5" Text="{Binding PredictedLabel}" FontSize="17" FontFamily="Franklin Gothic Medium"/>

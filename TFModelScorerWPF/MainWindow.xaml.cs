@@ -57,7 +57,10 @@ namespace AppWindow
             Manager.ImagePrediction.Clear();
             if (pathTextBlock.Text != "")
             {
-                if (folderOpen) { } //Manager.Predict(pathTextBlock.Text);
+                if (folderOpen)
+                {
+                    Manager.PredictFolder(pathTextBlock.Text);
+                }
                 else Manager.PredictImage(pathTextBlock.Text);
             }
 
