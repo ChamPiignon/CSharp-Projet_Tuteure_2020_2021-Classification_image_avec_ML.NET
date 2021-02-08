@@ -90,7 +90,7 @@ namespace ImageClassification.ModelScorer
 
             var labels = ModelHelpers.ReadLabels(labelsLocation);
 
-            var testData = ImageNetData.ReadFromCsv(testLocation, imagesFolder);
+            var testData = ImageNetData.ReadFromCsv(testLocation, imagesFolder);///////////////////////////////////////Chargement des images
 
             foreach (var sample in testData)
             {

@@ -9,7 +9,7 @@ namespace ImageClassification
     {
         static void Main(string[] args)
         {
-            string assetsRelativePath = @"../../../assets";
+            string assetsRelativePath = @"../../../assets";//Relative path
             string assetsPath = GetAbsolutePath(assetsRelativePath);
 
             var tagsTsv = Path.Combine(assetsPath, "inputs", "images", "tags.tsv");
