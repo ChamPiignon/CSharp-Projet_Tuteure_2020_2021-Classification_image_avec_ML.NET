@@ -6,9 +6,19 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsAsErrors>;NU1605</WarningsAsErrors>
+    <NoWarn>1701;1702;NU1701</NoWarn>
+  </PropertyGroup>
+
   <ItemGroup>
-    <PackageReference Include="WindowsAPICodePack-Shell" Version="1.1.1" />
-    <PackageReference Include="WPFCustomMessageBox" Version="1.0.7" />
+    <PackageReference Include="WindowsAPICodePack-Shell" Version="1.1.1">
+      <NoWarn>NU1701</NoWarn>
+    </PackageReference>
+    <PackageReference Include="WPFCustomMessageBox" Version="1.0.7">
+      <NoWarn>NU1701</NoWarn>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
