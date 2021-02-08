@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zBqVNIpa+S8SAnxhHeqUz1z9hPhS/W7V+qtrc7np8RVjHVVYoQOFZ+PSKsEEdbHBgIP3OoEj4oK+89luh8VpGQ==",
+  "dgSpecHash": "wh7/NzMUNwyAxFg9AxGJ8dlFmozZDZare0CZGKRuQanZbAMLrc26UKTISI+M6jjKhSdQaR+6J6iYXFRuWRGKfg==",
   "success": true,
   "projectFilePath": "C:\\Users\\utilisateur\\Desktop\\root\\Work\\C#\\ProjetTuteureG9\\TFModelScorerWPF\\TFModelScorerWPF.csproj",
   "expectedPackageFiles": [
@@ -79,7 +79,6 @@
     "C:\\Users\\utilisateur\\.nuget\\packages\\system.reflection.typeextensions\\4.3.0\\system.reflection.typeextensions.4.3.0.nupkg.sha512",
     "C:\\Users\\utilisateur\\.nuget\\packages\\system.resources.resourcemanager\\4.3.0\\system.resources.resourcemanager.4.3.0.nupkg.sha512",
     "C:\\Users\\utilisateur\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
-    "C:\\Users\\utilisateur\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
     "C:\\Users\\utilisateur\\.nuget\\packages\\system.runtime.extensions\\4.3.0\\system.runtime.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\utilisateur\\.nuget\\packages\\system.runtime.handles\\4.3.0\\system.runtime.handles.4.3.0.nupkg.sha512",
     "C:\\Users\\utilisateur\\.nuget\\packages\\system.runtime.interopservices\\4.3.0\\system.runtime.interopservices.4.3.0.nupkg.sha512",

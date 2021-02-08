@@ -54,7 +54,7 @@ namespace AppWindow
         private void PredictionButton_Click(object sender, RoutedEventArgs e)
         {
             Manager = new Manager();
-            DataContext = Manager.ImagePrediction;
+            DataContext = Manager;
             if (pathTextBlock.Text != "")
             {
                 if (folderOpen) { } //Manager.Predict(pathTextBlock.Text);
