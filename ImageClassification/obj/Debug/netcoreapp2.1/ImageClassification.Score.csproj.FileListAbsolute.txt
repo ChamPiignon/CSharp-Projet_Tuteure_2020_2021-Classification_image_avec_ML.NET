@@ -1,0 +1,12 @@
+C:\Users\utilisateur\Desktop\DeepLearning_ImageClassification_TensorFlow\ImageClassification\obj\Debug\netcoreapp2.1\ImageClassification.Score.csprojAssemblyReference.cache
+C:\Users\utilisateur\Desktop\DeepLearning_ImageClassification_TensorFlow\ImageClassification\obj\Debug\netcoreapp2.1\ImageClassification.Score.AssemblyInfoInputs.cache
+C:\Users\utilisateur\Desktop\DeepLearning_ImageClassification_TensorFlow\ImageClassification\obj\Debug\netcoreapp2.1\ImageClassification.Score.AssemblyInfo.cs
+C:\Users\utilisateur\Desktop\DeepLearning_ImageClassification_TensorFlow\ImageClassification\obj\Debug\netcoreapp2.1\ImageClassification.Score.csproj.CoreCompileInputs.cache
+C:\Users\utilisateur\Desktop\DeepLearning_ImageClassification_TensorFlow\ImageClassification\bin\Debug\netcoreapp2.1\ImageClassification.Score.deps.json
+C:\Users\utilisateur\Desktop\DeepLearning_ImageClassification_TensorFlow\ImageClassification\bin\Debug\netcoreapp2.1\ImageClassification.Score.runtimeconfig.json
+C:\Users\utilisateur\Desktop\DeepLearning_ImageClassification_TensorFlow\ImageClassification\bin\Debug\netcoreapp2.1\ImageClassification.Score.runtimeconfig.dev.json
+C:\Users\utilisateur\Desktop\DeepLearning_ImageClassification_TensorFlow\ImageClassification\bin\Debug\netcoreapp2.1\ImageClassification.Score.dll
+C:\Users\utilisateur\Desktop\DeepLearning_ImageClassification_TensorFlow\ImageClassification\bin\Debug\netcoreapp2.1\ImageClassification.Score.pdb
+C:\Users\utilisateur\Desktop\DeepLearning_ImageClassification_TensorFlow\ImageClassification\obj\Debug\netcoreapp2.1\ImageClassification.Score.dll
+C:\Users\utilisateur\Desktop\DeepLearning_ImageClassification_TensorFlow\ImageClassification\obj\Debug\netcoreapp2.1\ImageClassification.Score.pdb
+C:\Users\utilisateur\Desktop\DeepLearning_ImageClassification_TensorFlow\ImageClassification\obj\Debug\netcoreapp2.1\ImageClassification.Score.genruntimeconfig.cache
