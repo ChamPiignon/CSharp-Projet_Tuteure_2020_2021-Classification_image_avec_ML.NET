@@ -3,6 +3,7 @@ using ImageClassification.ModelScorer;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Text;
 
@@ -32,12 +33,16 @@ namespace ImageClassification.Score
             ImagePrediction = new ObservableCollection<ImageNetDataProbability>();
         }
 
-        public void PredictFolder(string imagePath)
+        public void PredictFolder(string folderPath)
         {
             try
             {
                 var modelScorer = new TFModelScorer(tagsTsv, imagesFolder, inceptionPb, labelsTxt);
-                //ImagePrediction.Add();
+                foreach (string imagePath in Directory.GetFiles(folderPath))
+                {
+                    Debug.WriteLine(imagePath);
+                    ImagePrediction.Add(modelScorer.Score(imagePath)[0]);
+                }
 
             }
             catch (Exception ex)
