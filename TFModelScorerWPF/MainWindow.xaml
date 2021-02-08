@@ -3,9 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AppWindow"
+        xmlns:local="clr-namespace:AppWindow" xmlns:tfmodelscorerwpf="clr-namespace:TFModelScorerWPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <tfmodelscorerwpf:percentageConvert x:Key="percentageConvert"/>
+    </Window.Resources>
 
     <Grid Background="#E6E6E6">
         <Grid.RowDefinitions>
@@ -38,7 +41,7 @@
                                     </Border.Background>
                                 </Border>
                                 <TextBlock Margin="5" Text="{Binding PredictedLabel}" FontSize="17" FontFamily="Franklin Gothic Medium"/>
-                                <TextBlock Margin="5 0" Text="{Binding Probability}" FontSize="15"/>
+                                <TextBlock Margin="5 0" Text="{Binding Probability, Converter={StaticResource percentageConvert}}" FontSize="15"/>
                             </StackPanel>
                         </Border>
                     </DataTemplate>
