@@ -33,6 +33,8 @@ namespace AppWindow
             InitializeComponent();
             Manager = new Manager();
             DataContext = Manager;
+
+
         }
         
         private void LoadButtonButton_Click(object sender, RoutedEventArgs e){

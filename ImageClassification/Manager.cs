@@ -30,6 +30,7 @@ namespace ImageClassification.Score
             inceptionPb = Path.Combine(assetsPath, "inputs", "inception", "tensorflow_inception_graph.pb");
             labelsTxt = Path.Combine(assetsPath, "inputs", "inception", "imagenet_comp_graph_label_strings.txt");
             ImagePrediction = new ObservableCollection<ImageNetDataProbability>();
+
         }
 
         public void PredictFolder(string folderPath)
