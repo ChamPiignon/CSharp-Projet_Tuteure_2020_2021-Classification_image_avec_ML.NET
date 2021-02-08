@@ -23,13 +23,30 @@
         <Button x:Name="loadButton" Grid.Row="1" Grid.Column="1" Content="..." HorizontalAlignment="Right" Click="LoadButtonButton_Click" Margin="0,10,10,10" Height="20" Width="35"/>
         <Button x:Name="predictionButton" Grid.Row="2" Width="130" Height="20" HorizontalAlignment="Left" Margin="10,10" Content="Start prediction" Click="PredictionButton_Click"/>
         <ComboBox Grid.Row="2" IsEditable="True" IsReadOnly="True" Text="Sort by" Grid.ColumnSpan="2" HorizontalAlignment="Right" Width="95" Margin="10,10" Height="20"/>
-        <ListBox Grid.Row="3" Grid.ColumnSpan="2" Margin="10" x:Name="listBox" ItemsSource="{Binding ImagePrediction}">
-            <ListBox.ItemTemplate>
+        <ItemsControl  Grid.Row="3" Grid.ColumnSpan="2" Margin="10"  x:Name="ListViewProducts" ItemsSource="{Binding ImagePrediction}" Background="White">
+            <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Label Content="{Binding PredictedLabel}" Height="50px"/>
+                    <Border Margin="10" Width="110" Height="160">
+                        <StackPanel>
+                            <Border Width="100" Height="100" CornerRadius="5" Margin="5">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="1"/>
+                                </Border.Effect>
+                                <Border.Background>
+                                    <ImageBrush ImageSource="/broccoli.jpg"/>
+                                </Border.Background>
+                            </Border>
+                            <TextBlock Margin="5" Text="{Binding PredictedLabel}" FontSize="17" FontFamily="Franklin Gothic Medium"/>
+                            <TextBlock Margin="5 0" Text="{Binding Probability}" FontSize="15"/>
+                        </StackPanel>
+                    </Border>
                 </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-
+            </ItemsControl.ItemTemplate>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
     </Grid>
 </Window>

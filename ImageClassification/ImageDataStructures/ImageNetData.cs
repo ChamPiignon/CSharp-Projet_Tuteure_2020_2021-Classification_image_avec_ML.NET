@@ -24,7 +24,7 @@ namespace ImageClassification.ImageDataStructures
 
     public class ImageNetDataProbability : ImageNetData
     {
-        public string PredictedLabel;
+        public string PredictedLabel { get; set; }
         public float Probability { get; set; }
     }
 }

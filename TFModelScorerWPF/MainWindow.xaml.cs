@@ -31,7 +31,8 @@ namespace AppWindow
 
         public MainWindow(){
             InitializeComponent();
-            
+            Manager = new Manager();
+            DataContext = Manager;
         }
         
         private void LoadButtonButton_Click(object sender, RoutedEventArgs e){
@@ -53,8 +54,7 @@ namespace AppWindow
 
         private void PredictionButton_Click(object sender, RoutedEventArgs e)
         {
-            Manager = new Manager();
-            DataContext = Manager;
+            Manager.ImagePrediction.Clear();
             if (pathTextBlock.Text != "")
             {
                 if (folderOpen) { } //Manager.Predict(pathTextBlock.Text);
