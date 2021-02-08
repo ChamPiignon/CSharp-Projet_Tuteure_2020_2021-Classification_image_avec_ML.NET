@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace ImageClassification.Score
 {
@@ -13,7 +14,6 @@ namespace ImageClassification.Score
     {
         private string assetsRelativePath;
         private string assetsPath;
-
         private string tagsTsv;
         private string imagesFolder;
         private string inceptionPb;
@@ -29,7 +29,6 @@ namespace ImageClassification.Score
             imagesFolder = Path.Combine(assetsPath, "inputs", "images");
             inceptionPb = Path.Combine(assetsPath, "inputs", "inception", "tensorflow_inception_graph.pb");
             labelsTxt = Path.Combine(assetsPath, "inputs", "inception", "imagenet_comp_graph_label_strings.txt");
-
             ImagePrediction = new ObservableCollection<ImageNetDataProbability>();
         }
 
@@ -40,14 +39,17 @@ namespace ImageClassification.Score
                 var modelScorer = new TFModelScorer(tagsTsv, imagesFolder, inceptionPb, labelsTxt);
                 foreach (string imagePath in Directory.GetFiles(folderPath))
                 {
-                    Debug.WriteLine(imagePath);
-                    ImagePrediction.Add(modelScorer.Score(imagePath)[0]);
+                    if (Regex.IsMatch(imagePath, @".jpg|.jpeg|.jpe|.jfif|.png|.bin$"))
+                    {
+                        Debug.WriteLine(imagePath);
+                        ImagePrediction.Add(modelScorer.Score(imagePath)[0]);
+                    }
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-
+                Console.WriteLine(e.StackTrace);
             }
         }
         public void PredictImage(string imagePath)
@@ -57,9 +59,9 @@ namespace ImageClassification.Score
                 var modelScorer = new TFModelScorer(tagsTsv, imagesFolder, inceptionPb, labelsTxt);
                 ImagePrediction.Add(modelScorer.Score(imagePath)[0]);
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-
+                Console.WriteLine(e.StackTrace);
             }
         }
 
