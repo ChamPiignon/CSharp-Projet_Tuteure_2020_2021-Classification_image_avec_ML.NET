@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using Microsoft.WindowsAPICodePack.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,27 +14,43 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPFCustomMessageBox;
 
 namespace AppWindow
 {
     /// <summary>
     /// Logique d'interaction pour MainWindow.xaml
     /// </summary>
+    /// 
+   
     public partial class MainWindow : Window
     {
-        public MainWindow()
-        {
+        private bool folderOpen = false;
+        public MainWindow(){
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void LoadButtonButton_Click(object sender, RoutedEventArgs e){
+            MessageBoxResult result = CustomMessageBox.ShowYesNo("load a folder or an image ? ", "Load file(s)", "Folder", "Image");
+            CommonOpenFileDialog dialog = new CommonOpenFileDialog();
+            if (MessageBoxResult.Yes == result){
+                folderOpen = true;
+            }
+            else{
+                folderOpen = false;
+                dialog.Filters.Add(new CommonFileDialogFilter("Image files", "*.jpg; *.jpeg; *.jpe; *.jfif; *.png; *.bin"));
+            }
+            dialog.IsFolderPicker = folderOpen;
+            if (dialog.ShowDialog() == CommonFileDialogResult.Ok){
+                pathTextBlock.Text = dialog.FileName;
+            }
+        }
+
+        private void PredictionButton_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Title = "Selectionner une image";
-            openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png, *.bin) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png; *.bin";
-            if (openFileDialog.ShowDialog() == true)
+            if (pathTextBlock.Text != "")
             {
-                pathTextBlock.Text = openFileDialog.FileName;
+
             }
         }
     }
