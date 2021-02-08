@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using ImageClassification.Score;
+using Microsoft.Win32;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using System;
 using System.Collections.Generic;
@@ -26,11 +27,15 @@ namespace AppWindow
     public partial class MainWindow : Window
     {
         private bool folderOpen = false;
+        public Manager Manager { get; set; }
+
         public MainWindow(){
             InitializeComponent();
+            
         }
-
+        
         private void LoadButtonButton_Click(object sender, RoutedEventArgs e){
+
             MessageBoxResult result = CustomMessageBox.ShowYesNo("load a folder or an image ? ", "Load file(s)", "Folder", "Image");
             CommonOpenFileDialog dialog = new CommonOpenFileDialog();
             if (MessageBoxResult.Yes == result){
@@ -48,10 +53,14 @@ namespace AppWindow
 
         private void PredictionButton_Click(object sender, RoutedEventArgs e)
         {
+            Manager = new Manager();
+            DataContext = Manager.ImagePrediction;
             if (pathTextBlock.Text != "")
             {
-
+                if (folderOpen) { } //Manager.Predict(pathTextBlock.Text);
+                else Manager.PredictImage(pathTextBlock.Text);
             }
+
         }
     }
 }

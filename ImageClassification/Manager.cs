@@ -2,6 +2,7 @@
 using ImageClassification.ModelScorer;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Text;
 
@@ -17,7 +18,7 @@ namespace ImageClassification.Score
         private string inceptionPb;
         private string labelsTxt;
 
-        public List<ImageNetDataProbability> ImagePrediction { get; set; }
+        public ObservableCollection<ImageNetDataProbability> ImagePrediction { get; set; }
 
         public Manager()
         {
@@ -28,15 +29,15 @@ namespace ImageClassification.Score
             inceptionPb = Path.Combine(assetsPath, "inputs", "inception", "tensorflow_inception_graph.pb");
             labelsTxt = Path.Combine(assetsPath, "inputs", "inception", "imagenet_comp_graph_label_strings.txt");
 
-            ImagePrediction = new List<ImageNetDataProbability>();
+            ImagePrediction = new ObservableCollection<ImageNetDataProbability>();
         }
 
-        public void Predict()
+        public void PredictFolder(string imagePath)
         {
             try
             {
                 var modelScorer = new TFModelScorer(tagsTsv, imagesFolder, inceptionPb, labelsTxt);
-                modelScorer.Score();
+                //ImagePrediction.Add();
 
             }
             catch (Exception ex)
