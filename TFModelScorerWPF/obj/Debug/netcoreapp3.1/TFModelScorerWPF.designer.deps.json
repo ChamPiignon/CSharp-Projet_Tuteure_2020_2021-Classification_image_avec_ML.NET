@@ -1541,6 +1541,33 @@
             "fileVersion": "0.20.1.0"
           }
         }
+      },
+      "WindowsAPICodePack-Core/1.1.1": {
+        "runtime": {
+          "lib/Microsoft.WindowsAPICodePack.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
+          }
+        }
+      },
+      "WindowsAPICodePack-Shell/1.1.1": {
+        "dependencies": {
+          "WindowsAPICodePack-Core": "1.1.1"
+        },
+        "runtime": {
+          "lib/Microsoft.WindowsAPICodePack.Shell.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
+          }
+        }
+      },
+      "WPFCustomMessageBox/1.0.7": {
+        "runtime": {
+          "lib/WPFCustomMessageBox.dll": {
+            "assemblyVersion": "1.0.7.39267",
+            "fileVersion": "1.0.7.39267"
+          }
+        }
       }
     }
   },
@@ -2272,6 +2299,27 @@
       "sha512": "sha512-8svOVEjS1CV5JDnUUuFKwvbM2q8KSaqUR7rFo3Ht/duACtY58lZS4Q6hwu2GeWm8gRvhJIrNngIrDbsWMbDvyg==",
       "path": "tensorflow.net/0.20.1",
       "hashPath": "tensorflow.net.0.20.1.nupkg.sha512"
+    },
+    "WindowsAPICodePack-Core/1.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GoURoQuE7ea7B7q24YRTBfZbsNO7ZtwSyBHbM8zO0ynwfjAGC0bbAmVrDvZ6HbWtqqOt6QTzdmYnj2WJglb5JQ==",
+      "path": "windowsapicodepack-core/1.1.1",
+      "hashPath": "windowsapicodepack-core.1.1.1.nupkg.sha512"
+    },
+    "WindowsAPICodePack-Shell/1.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CPFamhL3jPo8O6+ErGsLS4LK3DWP5ncxqhbzpPnYkIW9rjatunUij35iTjprbr9mlYR/5Pbguw21MwSmTOKR4g==",
+      "path": "windowsapicodepack-shell/1.1.1",
+      "hashPath": "windowsapicodepack-shell.1.1.1.nupkg.sha512"
+    },
+    "WPFCustomMessageBox/1.0.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-H4q2aESgv74yQR47a+mbctY2YhpSVF4WhHdQNDzQ76j5q6RBbVfVDRMc/OR+amslzuVxI/p6YmkhmA/racAbhg==",
+      "path": "wpfcustommessagebox/1.0.7",
+      "hashPath": "wpfcustommessagebox.1.0.7.nupkg.sha512"
     }
   }
 }

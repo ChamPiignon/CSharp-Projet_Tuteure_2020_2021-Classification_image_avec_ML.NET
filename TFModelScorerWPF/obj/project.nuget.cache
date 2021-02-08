@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1QD2sqHC0w3SycCfrISfLVP9BuOx/1Vx/+2ipho+1wVnWfUjzDLqvAF6QSM76/wd/NAKiS3VhthqL19Ch96QrQ==",
+  "dgSpecHash": "zBqVNIpa+S8SAnxhHeqUz1z9hPhS/W7V+qtrc7np8RVjHVVYoQOFZ+PSKsEEdbHBgIP3OoEj4oK+89luh8VpGQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\utilisateur\\Desktop\\root\\Work\\C#\\ProjetTuteureG9\\TFModelScorerWPF\\TFModelScorerWPF.csproj",
   "expectedPackageFiles": [
@@ -107,7 +107,41 @@
     "C:\\Users\\utilisateur\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\utilisateur\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\utilisateur\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\utilisateur\\.nuget\\packages\\tensorflow.net\\0.20.1\\tensorflow.net.0.20.1.nupkg.sha512"
+    "C:\\Users\\utilisateur\\.nuget\\packages\\tensorflow.net\\0.20.1\\tensorflow.net.0.20.1.nupkg.sha512",
+    "C:\\Users\\utilisateur\\.nuget\\packages\\windowsapicodepack-core\\1.1.1\\windowsapicodepack-core.1.1.1.nupkg.sha512",
+    "C:\\Users\\utilisateur\\.nuget\\packages\\windowsapicodepack-shell\\1.1.1\\windowsapicodepack-shell.1.1.1.nupkg.sha512",
+    "C:\\Users\\utilisateur\\.nuget\\packages\\wpfcustommessagebox\\1.0.7\\wpfcustommessagebox.1.0.7.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Le package 'WindowsAPICodePack-Core 1.1.1' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' au lieu du framework cible du projet '.NETCoreApp,Version=v3.1'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
+      "libraryId": "WindowsAPICodePack-Core",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Le package 'WindowsAPICodePack-Shell 1.1.1' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' au lieu du framework cible du projet '.NETCoreApp,Version=v3.1'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
+      "libraryId": "WindowsAPICodePack-Shell",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Le package 'WPFCustomMessageBox 1.0.7' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' au lieu du framework cible du projet '.NETCoreApp,Version=v3.1'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
+      "libraryId": "WPFCustomMessageBox",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }
