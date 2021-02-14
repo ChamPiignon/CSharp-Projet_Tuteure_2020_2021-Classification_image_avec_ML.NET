@@ -115,9 +115,6 @@
           }
         },
         "warningProperties": {
-          "noWarn": [
-            "NU1701"
-          ],
           "warnAsError": [
             "NU1605"
           ]
@@ -129,17 +126,11 @@
           "dependencies": {
             "WPFCustomMessageBox": {
               "target": "Package",
-              "version": "[1.0.7, )",
-              "noWarn": [
-                "NU1701"
-              ]
+              "version": "[1.0.7, )"
             },
             "WindowsAPICodePack-Shell": {
               "target": "Package",
-              "version": "[1.1.1, )",
-              "noWarn": [
-                "NU1701"
-              ]
+              "version": "[1.1.1, )"
             }
           },
           "imports": [

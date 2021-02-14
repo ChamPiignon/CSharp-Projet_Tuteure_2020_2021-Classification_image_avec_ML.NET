@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.ML;
 using ImageClassification.ImageDataStructures;
+using static ImageClassification.ModelScorer.ConsoleHelpers;
+using static ImageClassification.ModelScorer.ModelHelpers;
 
 namespace ImageClassification.ModelScorer
 {
@@ -89,6 +91,8 @@ namespace ImageClassification.ModelScorer
                                                                   PredictionEngine<ImageNetData, ImageNetPrediction> model)
         {
 
+            var labels = ModelHelpers.ReadLabels(labelsLocation);
+
             //var testData = ImageNetData.ReadFromCsv(testLocation, imagesFolder);///////////////////////////////////////Chargement des images
             var testData = ImageNetData.Read(imagesFolder);
 
@@ -100,6 +104,8 @@ namespace ImageClassification.ModelScorer
                     ImagePath = sample.ImagePath,
                     Label = sample.Label
                 };
+                (imageData.PredictedLabel, imageData.Probability) = GetBestLabel(labels, probs);
+                imageData.ConsoleWrite();
                 yield return imageData;
             }
         }
@@ -108,6 +114,8 @@ namespace ImageClassification.ModelScorer
                                                                   string labelsLocation,
                                                                   PredictionEngine<ImageNetData, ImageNetPrediction> model)
         {
+            var labels = ModelHelpers.ReadLabels(labelsLocation);
+
             var testData = new ImageNetData { ImagePath = imageFile };
 
             var probs = model.Predict(testData).PredictedLabels;
@@ -116,6 +124,7 @@ namespace ImageClassification.ModelScorer
                 ImagePath = testData.ImagePath,
                 Label = testData.Label
             };
+            (imageData.PredictedLabel, imageData.Probability) = GetBestLabel(labels, probs);
             yield return imageData;
         }
     }
