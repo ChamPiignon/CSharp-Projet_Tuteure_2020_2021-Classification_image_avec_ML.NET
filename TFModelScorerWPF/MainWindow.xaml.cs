@@ -63,5 +63,11 @@ namespace AppWindow
                 else Manager.PredictImage(pathTextBlock.Text);
             }
         }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            String sortByLabel = (sender as ComboBox).SelectedValue as String;
+            Manager.SortResultsBy(sortByLabel);
+        }
     }
 }

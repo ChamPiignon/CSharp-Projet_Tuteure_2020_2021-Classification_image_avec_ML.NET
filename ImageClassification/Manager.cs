@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -20,7 +21,18 @@ namespace ImageClassification.Score
         private string labelsTxt;
 
         public ObservableCollection<ImageNetDataProbability> ImagePrediction { get; set; }
+        private ObservableCollection<ImageNetDataProbability> SavedList { get; set; }
+        public ObservableCollection<String> LabelPrediction { get; set; } = new ObservableCollection<string>();
 
+        public void SortResultsBy(String label)
+        {
+
+            ImagePrediction.Clear();
+            foreach (ImageNetDataProbability image in SavedList)
+            {
+                if(image.PredictedLabel == label) { ImagePrediction.Add(image); }
+            }
+        }
         public Manager()
         {
             assetsRelativePath = @"../../../assets";
@@ -35,6 +47,7 @@ namespace ImageClassification.Score
 
         public void PredictFolder(string folderPath)
         {
+            LabelPrediction.Clear();
             try
             {
                 foreach (string imagePath in Directory.GetFiles(folderPath))
@@ -49,6 +62,11 @@ namespace ImageClassification.Score
             {
                 Console.WriteLine(e.StackTrace);
             }
+            foreach (String str in ImagePrediction.Select(o => o.PredictedLabel).Distinct())
+            {
+                LabelPrediction.Add(str);
+            }
+            SavedList = new ObservableCollection<ImageNetDataProbability>(ImagePrediction);
         }
         public void PredictImage(string imagePath)
         {
