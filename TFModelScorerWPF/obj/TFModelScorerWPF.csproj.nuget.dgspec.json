@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\utilisateur\\Desktop\\root\\Work\\C#\\ProjetTuteureG9\\TFModelScorerWPF\\TFModelScorerWPF.csproj": {}
+    "C:\\Users\\Guilhem\\Documents\\PROJETIUT2A_classImage\\Dossier git\\ProjetTuteureG9\\TFModelScorerWPF\\TFModelScorerWPF.csproj": {}
   },
   "projects": {
-    "C:\\Users\\utilisateur\\Desktop\\root\\Work\\C#\\ProjetTuteureG9\\ImageClassification\\ImageClassification.Score.csproj": {
+    "C:\\Users\\Guilhem\\Documents\\PROJETIUT2A_classImage\\Dossier git\\ProjetTuteureG9\\ImageClassification\\ImageClassification.Score.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\utilisateur\\Desktop\\root\\Work\\C#\\ProjetTuteureG9\\ImageClassification\\ImageClassification.Score.csproj",
+        "projectUniqueName": "C:\\Users\\Guilhem\\Documents\\PROJETIUT2A_classImage\\Dossier git\\ProjetTuteureG9\\ImageClassification\\ImageClassification.Score.csproj",
         "projectName": "ImageClassification.Score",
-        "projectPath": "C:\\Users\\utilisateur\\Desktop\\root\\Work\\C#\\ProjetTuteureG9\\ImageClassification\\ImageClassification.Score.csproj",
-        "packagesPath": "C:\\Users\\utilisateur\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\utilisateur\\Desktop\\root\\Work\\C#\\ProjetTuteureG9\\ImageClassification\\obj\\",
+        "projectPath": "C:\\Users\\Guilhem\\Documents\\PROJETIUT2A_classImage\\Dossier git\\ProjetTuteureG9\\ImageClassification\\ImageClassification.Score.csproj",
+        "packagesPath": "C:\\Users\\Guilhem\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Guilhem\\Documents\\PROJETIUT2A_classImage\\Dossier git\\ProjetTuteureG9\\ImageClassification\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\utilisateur\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Guilhem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -30,7 +26,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -42,7 +37,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.ML": {
               "target": "Package",
@@ -76,26 +70,22 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\utilisateur\\Desktop\\root\\Work\\C#\\ProjetTuteureG9\\TFModelScorerWPF\\TFModelScorerWPF.csproj": {
+    "C:\\Users\\Guilhem\\Documents\\PROJETIUT2A_classImage\\Dossier git\\ProjetTuteureG9\\TFModelScorerWPF\\TFModelScorerWPF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\utilisateur\\Desktop\\root\\Work\\C#\\ProjetTuteureG9\\TFModelScorerWPF\\TFModelScorerWPF.csproj",
+        "projectUniqueName": "C:\\Users\\Guilhem\\Documents\\PROJETIUT2A_classImage\\Dossier git\\ProjetTuteureG9\\TFModelScorerWPF\\TFModelScorerWPF.csproj",
         "projectName": "TFModelScorerWPF",
-        "projectPath": "C:\\Users\\utilisateur\\Desktop\\root\\Work\\C#\\ProjetTuteureG9\\TFModelScorerWPF\\TFModelScorerWPF.csproj",
-        "packagesPath": "C:\\Users\\utilisateur\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\utilisateur\\Desktop\\root\\Work\\C#\\ProjetTuteureG9\\TFModelScorerWPF\\obj\\",
+        "projectPath": "C:\\Users\\Guilhem\\Documents\\PROJETIUT2A_classImage\\Dossier git\\ProjetTuteureG9\\TFModelScorerWPF\\TFModelScorerWPF.csproj",
+        "packagesPath": "C:\\Users\\Guilhem\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Guilhem\\Documents\\PROJETIUT2A_classImage\\Dossier git\\ProjetTuteureG9\\TFModelScorerWPF\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\utilisateur\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Guilhem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -106,10 +96,9 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\utilisateur\\Desktop\\root\\Work\\C#\\ProjetTuteureG9\\ImageClassification\\ImageClassification.Score.csproj": {
-                "projectPath": "C:\\Users\\utilisateur\\Desktop\\root\\Work\\C#\\ProjetTuteureG9\\ImageClassification\\ImageClassification.Score.csproj"
+              "C:\\Users\\Guilhem\\Documents\\PROJETIUT2A_classImage\\Dossier git\\ProjetTuteureG9\\ImageClassification\\ImageClassification.Score.csproj": {
+                "projectPath": "C:\\Users\\Guilhem\\Documents\\PROJETIUT2A_classImage\\Dossier git\\ProjetTuteureG9\\ImageClassification\\ImageClassification.Score.csproj"
               }
             }
           }
@@ -125,7 +114,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "WPFCustomMessageBox": {
               "target": "Package",
@@ -160,7 +148,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

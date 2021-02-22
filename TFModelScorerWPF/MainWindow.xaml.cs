@@ -16,14 +16,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WPFCustomMessageBox;
+using System.Net;
+using Microsoft.VisualBasic;
 
-namespace AppWindow
-{
+
+
+namespace AppWindow{
     /// <summary>
     /// Logique d'interaction pour MainWindow.xaml
     /// </summary>
     /// 
-   
+
     public partial class MainWindow : Window
     {
         private bool folderOpen = false;
@@ -36,24 +39,37 @@ namespace AppWindow
 
 
         }
-        
-        private void LoadButtonButton_Click(object sender, RoutedEventArgs e){
 
-            MessageBoxResult result = CustomMessageBox.ShowYesNo("load a folder or an image ? ", "Load file(s)", "Folder", "Image");
+        private void LoadButtonButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            MessageBoxResult result = CustomMessageBox.ShowYesNoCancel("load a folder or an image ? ", "Load file(s)", "Folder", "Image", "Url");
             CommonOpenFileDialog dialog = new CommonOpenFileDialog();
-            if (MessageBoxResult.Yes == result){
+            if (MessageBoxResult.Yes == result)
+            {
                 folderOpen = true;
+                dialog.IsFolderPicker = folderOpen;
+                if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+                {
+                    pathTextBlock.Text = dialog.FileName;
+                }
             }
-            else{
+            else if (MessageBoxResult.No == result)
+            {
                 folderOpen = false;
                 dialog.Filters.Add(new CommonFileDialogFilter("Image files", "*.jpg; *.jpeg; *.jpe; *.jfif; *.png; *.bin"));
+                dialog.IsFolderPicker = folderOpen;
+                if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+                {
+                    pathTextBlock.Text = dialog.FileName;
+                }
             }
-            dialog.IsFolderPicker = folderOpen;
-            if (dialog.ShowDialog() == CommonFileDialogResult.Ok){
-                pathTextBlock.Text = dialog.FileName;
+            else
+            {
+                 
+               
             }
         }
-
         private void PredictionButton_Click(object sender, RoutedEventArgs e)
         {
             Manager.ImagePrediction.Clear();
