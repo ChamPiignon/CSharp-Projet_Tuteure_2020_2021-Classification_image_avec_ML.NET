@@ -18,8 +18,9 @@ using System.Windows.Shapes;
 using WPFCustomMessageBox;
 using System.Net;
 using Microsoft.VisualBasic;
-
-
+using System.Windows.Forms;
+using System.IO;
+using System.Drawing;
 
 namespace AppWindow{
     /// <summary>
@@ -64,10 +65,30 @@ namespace AppWindow{
                     pathTextBlock.Text = dialog.FileName;
                 }
             }
-            else
+            else if(MessageBoxResult.Cancel == result)
             {
-                 
-               
+                folderOpen = false;
+                string url = Interaction.InputBox("Image URL:","Load url");
+                if(url != "")
+                {
+                    try
+                    {
+                        Random random = new Random();
+                        WebClient webClient = new WebClient();
+                        string randomStr = new string(Enumerable.Repeat("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", 28).Select(s => s[random.Next(s.Length)]).ToArray());
+                        string fileName = System.IO.Path.GetTempPath() + randomStr;
+                        webClient.DownloadFile(url, fileName);
+                        Bitmap image = new Bitmap(fileName);
+                        pathTextBlock.Text = fileName;
+                    }
+                    catch(Exception ex)
+                    {
+                        System.Windows.Forms.MessageBox.Show("Error Url.\n" + ex.Message,
+                        "Information",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                    }
+                }
             }
         }
         private void PredictionButton_Click(object sender, RoutedEventArgs e)
@@ -82,7 +103,7 @@ namespace AppWindow{
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            String sortByLabel = (sender as ComboBox).SelectedValue as String;
+            String sortByLabel = (sender as System.Windows.Controls.ComboBox).SelectedValue as String;
             Manager.SortResultsBy(sortByLabel);
         }
     }
