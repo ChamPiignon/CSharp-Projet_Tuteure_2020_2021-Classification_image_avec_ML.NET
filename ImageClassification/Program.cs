@@ -24,12 +24,7 @@ namespace ImageClassification
                 //modelScorer.Score();
 
             }
-            catch (Exception ex)
-            {
-                ConsoleHelpers.ConsoleWriteException(ex.ToString());
-            }
-
-            ConsoleHelpers.ConsolePressAnyKey();
+            catch { }
         }
 
         public static string GetAbsolutePath(string relativePath)
