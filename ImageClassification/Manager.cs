@@ -26,7 +26,6 @@ namespace ImageClassification.Score
 
         public void SortResultsBy(String label)
         {
-
             ImagePrediction.Clear();
             foreach (ImageNetDataProbability image in SavedList)
             {
@@ -42,7 +41,30 @@ namespace ImageClassification.Score
             inceptionPb = Path.Combine(assetsPath, "inputs", "inception", "tensorflow_inception_graph.pb");
             labelsTxt = Path.Combine(assetsPath, "inputs", "inception", "imagenet_comp_graph_label_strings.txt");
             ImagePrediction = new ObservableCollection<ImageNetDataProbability>();
+        }
 
+        public void SaveResults()
+        {
+            String path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "ClassificationScorer");
+            
+            String sessionPath = Path.Combine(path, DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss-ffff"));
+            int number;
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+            Directory.CreateDirectory(sessionPath);
+            foreach (String label in LabelPrediction)
+            {
+                Directory.CreateDirectory(Path.Combine(sessionPath, label));
+                number = 0;
+                foreach (ImageNetDataProbability image in SavedList)
+                {
+                    number++;
+                    if(label == image.PredictedLabel)
+                        File.Copy(image.ImagePath, Path.Combine(sessionPath,label + "/" + label + number.ToString()+".jpg"), true);
+                }
+            }
         }
 
         public void PredictFolder(string folderPath)
@@ -67,6 +89,8 @@ namespace ImageClassification.Score
                 LabelPrediction.Add(str);
             }
             SavedList = new ObservableCollection<ImageNetDataProbability>(ImagePrediction);
+
+            SaveResults();
         }
         public void PredictImage(string imagePath)
         {

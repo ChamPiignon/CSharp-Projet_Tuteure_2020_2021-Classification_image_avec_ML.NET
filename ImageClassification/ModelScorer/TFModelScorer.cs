@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.ML;
 using ImageClassification.ImageDataStructures;
-using static ImageClassification.ModelScorer.ConsoleHelpers;
 using static ImageClassification.ModelScorer.ModelHelpers;
 
 namespace ImageClassification.ModelScorer
@@ -49,15 +48,6 @@ namespace ImageClassification.ModelScorer
             // output tensor name
             public const string outputTensorName = "softmax2";
         }
-
-        public ImageNetDataProbability[] ScoreFolder(string path)
-        {
-            var model = LoadModel(dataLocation, imagesFolder, modelLocation);
-
-            var predictions = PredictDataUsingModel(dataLocation, path, labelsLocation, model).ToArray();
-
-            return predictions;
-        }
         public ImageNetDataProbability[] ScoreImage(string imagePath)
         {
             var model = LoadModel(dataLocation, imagesFolder, modelLocation);
@@ -68,7 +58,7 @@ namespace ImageClassification.ModelScorer
         }
 
         private PredictionEngine<ImageNetData, ImageNetPrediction> LoadModel(string dataLocation, string imagesFolder, string modelLocation)
-        { 
+        {
             var data = mlContext.Data.LoadFromTextFile<ImageNetData>(dataLocation, hasHeader: true);
 
             var pipeline = mlContext.Transforms.LoadImages(outputColumnName: "input", imageFolder: imagesFolder, inputColumnName: nameof(ImageNetData.ImagePath))
@@ -76,38 +66,13 @@ namespace ImageClassification.ModelScorer
                             .Append(mlContext.Transforms.ExtractPixels(outputColumnName: "input", interleavePixelColors: ImageNetSettings.channelsLast, offsetImage: ImageNetSettings.mean))
                             .Append(mlContext.Model.LoadTensorFlowModel(modelLocation).
                             ScoreTensorFlowModel(outputColumnNames: new[] { "softmax2" },
-                                                inputColumnNames: new[] { "input" }, addBatchDimensionInput:true));
-                        
+                                                inputColumnNames: new[] { "input" }, addBatchDimensionInput: true));
+
             ITransformer model = pipeline.Fit(data);
 
             var predictionEngine = mlContext.Model.CreatePredictionEngine<ImageNetData, ImageNetPrediction>(model);
 
             return predictionEngine;
-        }
-
-        protected IEnumerable<ImageNetDataProbability> PredictDataUsingModel(string testLocation, 
-                                                                  string imagesFolder, 
-                                                                  string labelsLocation, 
-                                                                  PredictionEngine<ImageNetData, ImageNetPrediction> model)
-        {
-
-            var labels = ModelHelpers.ReadLabels(labelsLocation);
-
-            //var testData = ImageNetData.ReadFromCsv(testLocation, imagesFolder);///////////////////////////////////////Chargement des images
-            var testData = ImageNetData.Read(imagesFolder);
-
-            foreach (var sample in testData)
-            {
-                var probs = model.Predict(sample).PredictedLabels;
-                var imageData = new ImageNetDataProbability()
-                {
-                    ImagePath = sample.ImagePath,
-                    Label = sample.Label
-                };
-                (imageData.PredictedLabel, imageData.Probability) = GetBestLabel(labels, probs);
-                imageData.ConsoleWrite();
-                yield return imageData;
-            }
         }
         protected IEnumerable<ImageNetDataProbability> PredictImageUsingModel(string testLocation,
                                                                   string imageFile,
