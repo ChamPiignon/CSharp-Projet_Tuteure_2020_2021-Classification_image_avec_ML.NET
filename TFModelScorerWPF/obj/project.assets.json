@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {
+    "net5.0-windows7.0": {
       "Google.Protobuf/3.11.4": {
         "type": "package",
         "dependencies": {
@@ -6092,40 +6092,46 @@
     }
   },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": [
+    "net5.0-windows7.0": [
       "ImageClassification.Score >= 1.0.0",
       "WPFCustomMessageBox >= 1.0.7",
       "WindowsAPICodePack-Shell >= 1.1.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Guilhem\\.nuget\\packages\\": {}
+    "C:\\Users\\utilisateur\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Guilhem\\Documents\\PROJETIUT2A_classImage\\Dossier git\\ProjetTuteureG9\\TFModelScorerWPF\\TFModelScorerWPF.csproj",
+      "projectUniqueName": "C:\\Users\\utilisateur\\Desktop\\root\\Work\\C#\\ProjetTuteureG9\\TFModelScorerWPF\\TFModelScorerWPF.csproj",
       "projectName": "TFModelScorerWPF",
-      "projectPath": "C:\\Users\\Guilhem\\Documents\\PROJETIUT2A_classImage\\Dossier git\\ProjetTuteureG9\\TFModelScorerWPF\\TFModelScorerWPF.csproj",
-      "packagesPath": "C:\\Users\\Guilhem\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Guilhem\\Documents\\PROJETIUT2A_classImage\\Dossier git\\ProjetTuteureG9\\TFModelScorerWPF\\obj\\",
+      "projectPath": "C:\\Users\\utilisateur\\Desktop\\root\\Work\\C#\\ProjetTuteureG9\\TFModelScorerWPF\\TFModelScorerWPF.csproj",
+      "packagesPath": "C:\\Users\\utilisateur\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\utilisateur\\Desktop\\root\\Work\\C#\\ProjetTuteureG9\\TFModelScorerWPF\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Guilhem\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\utilisateur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "netcoreapp3.1"
+        "net5.0-windows7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "netcoreapp3.1": {
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\Guilhem\\Documents\\PROJETIUT2A_classImage\\Dossier git\\ProjetTuteureG9\\ImageClassification\\ImageClassification.Score.csproj": {
-              "projectPath": "C:\\Users\\Guilhem\\Documents\\PROJETIUT2A_classImage\\Dossier git\\ProjetTuteureG9\\ImageClassification\\ImageClassification.Score.csproj"
+            "C:\\Users\\utilisateur\\Desktop\\root\\Work\\C#\\ProjetTuteureG9\\ImageClassification\\ImageClassification.Score.csproj": {
+              "projectPath": "C:\\Users\\utilisateur\\Desktop\\root\\Work\\C#\\ProjetTuteureG9\\ImageClassification\\ImageClassification.Score.csproj"
             }
           }
         }
@@ -6140,7 +6146,8 @@
       }
     },
     "frameworks": {
-      "netcoreapp3.1": {
+      "net5.0-windows7.0": {
+        "targetAlias": "net5.0-windows",
         "dependencies": {
           "WPFCustomMessageBox": {
             "target": "Package",
@@ -6171,11 +6178,11 @@
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           },
-          "Microsoft.WindowsDesktop.App.WPF": {
+          "Microsoft.WindowsDesktop.App": {
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
