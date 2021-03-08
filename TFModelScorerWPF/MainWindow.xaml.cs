@@ -21,24 +21,23 @@ using Microsoft.VisualBasic;
 using System.Windows.Forms;
 using System.IO;
 using System.Drawing;
+using System.ComponentModel;
 
 namespace AppWindow{
     /// <summary>
     /// Logique d'interaction pour MainWindow.xaml
     /// </summary>
     /// 
-
     public partial class MainWindow : Window
     {
         private bool folderOpen = false;
         public Manager Manager { get; set; }
 
+
         public MainWindow(){
             InitializeComponent();
             Manager = new Manager();
             DataContext = Manager;
-
-
         }
 
         private void LoadButtonButton_Click(object sender, RoutedEventArgs e)
@@ -93,6 +92,8 @@ namespace AppWindow{
         }
         private void PredictionButton_Click(object sender, RoutedEventArgs e)
         {
+            Manager.MaxProgress = 1;
+            Manager.ValueProgress = 0;
             Manager.ImagePrediction.Clear();
             if (pathTextBlock.Text != "")
             {

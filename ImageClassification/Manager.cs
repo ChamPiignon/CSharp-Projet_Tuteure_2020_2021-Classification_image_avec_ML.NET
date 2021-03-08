@@ -3,15 +3,17 @@ using ImageClassification.ModelScorer;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ImageClassification.Score
 {
-    public class Manager
+    public class Manager : INotifyPropertyChanged
     {
         private string assetsRelativePath;
         private string assetsPath;
@@ -19,6 +21,35 @@ namespace ImageClassification.Score
         private string imagesFolder;
         private string inceptionPb;
         private string labelsTxt;
+        private int valueProgress;
+        private int maxProgress;
+        public int ValueProgress
+        {
+            get { return this.valueProgress; }
+            set
+            {
+                this.valueProgress = value;
+                NotifyPropertyChange("ValueProgress");
+            }
+        }
+        public int MaxProgress
+        {
+            get { return this.maxProgress; }
+            set
+            {
+                this.maxProgress = value;
+                NotifyPropertyChange("MaxProgress");
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void NotifyPropertyChange(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
 
         public ObservableCollection<ImageNetDataProbability> ImagePrediction { get; set; }
         private ObservableCollection<ImageNetDataProbability> SavedList { get; set; }
@@ -41,6 +72,9 @@ namespace ImageClassification.Score
             inceptionPb = Path.Combine(assetsPath, "inputs", "inception", "tensorflow_inception_graph.pb");
             labelsTxt = Path.Combine(assetsPath, "inputs", "inception", "imagenet_comp_graph_label_strings.txt");
             ImagePrediction = new ObservableCollection<ImageNetDataProbability>();
+
+            MaxProgress = 1;
+            ValueProgress = 0;
         }
 
         public void SaveResults()
@@ -72,13 +106,14 @@ namespace ImageClassification.Score
             LabelPrediction.Clear();
             try
             {
-                foreach (string imagePath in Directory.GetFiles(folderPath))
+                var regexTest = new Func<string, bool>(i => Regex.IsMatch(i, @".jpg|.jpeg|.jpe|.jfif|.png|.bin$", RegexOptions.Compiled | RegexOptions.IgnoreCase));
+                var files = Directory.GetFiles(folderPath).Where(regexTest).ToList();
+                MaxProgress = files.Count;
+                foreach (string imagePath in files)
                 {
-                    if (Regex.IsMatch(imagePath, @".jpg|.jpeg|.jpe|.jfif|.png|.bin$"))
-                    {
-                        PredictImage(imagePath);
-                    }
-                }
+                    PredictImage(imagePath);
+                    Debug.WriteLine(ValueProgress+"/"+ MaxProgress);// A ENLEVER
+                }                
             }
             catch (Exception e)
             {
@@ -97,8 +132,9 @@ namespace ImageClassification.Score
             try
             {
                 var modelScorer = new TFModelScorer(tagsTsv, imagesFolder, inceptionPb, labelsTxt);
-                Debug.WriteLine(imagePath);
+                Debug.WriteLine(imagePath);// A ENLEVER
                 ImagePrediction.Add(modelScorer.ScoreImage(imagePath)[0]);
+                ValueProgress += 1;
             }
             catch (Exception e)
             {
