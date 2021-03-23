@@ -13,7 +13,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace ImageClassification.Score
 {
-    public class Manager : INotifyPropertyChanged
+    public class ViewData : INotifyPropertyChanged
     {
         private string assetsRelativePath;
         private string assetsPath;
@@ -23,6 +23,7 @@ namespace ImageClassification.Score
         private string labelsTxt;
         private int valueProgress;
         private int maxProgress;
+
         public int ValueProgress
         {
             get { return this.valueProgress; }
@@ -63,7 +64,7 @@ namespace ImageClassification.Score
                 if(image.PredictedLabel == label) { ImagePrediction.Add(image); }
             }
         }
-        public Manager()
+        public ViewData()
         {
             assetsRelativePath = @"../../../assets";
             assetsPath = GetAbsolutePath(assetsRelativePath);

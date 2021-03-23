@@ -31,12 +31,12 @@ namespace AppWindow{
     public partial class MainWindow : Window
     {
         private bool folderOpen = false;
-        public Manager Manager { get; set; }
+        public ViewData Manager { get; set; }
 
 
         public MainWindow(){
             InitializeComponent();
-            Manager = new Manager();
+            Manager = new ViewData();
             DataContext = Manager;
         }
 
@@ -107,5 +107,6 @@ namespace AppWindow{
             String sortByLabel = (sender as System.Windows.Controls.ComboBox).SelectedValue as String;
             Manager.SortResultsBy(sortByLabel);
         }
+
     }
 }

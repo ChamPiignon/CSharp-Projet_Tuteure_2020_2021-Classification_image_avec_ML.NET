@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.ML;
 using ImageClassification.ImageDataStructures;
-using static ImageClassification.ModelScorer.ModelHelpers;
+using ImageClassification.Score.ModelScorer;
 
 namespace ImageClassification.ModelScorer
 {
@@ -89,7 +89,7 @@ namespace ImageClassification.ModelScorer
                 ImagePath = testData.ImagePath,
                 Label = testData.Label
             };
-            (imageData.PredictedLabel, imageData.Probability) = GetBestLabel(labels, probs);
+            (imageData.PredictedLabel, imageData.Probability) = ModelHelpers.GetBestLabel(labels, probs);
             yield return imageData;
         }
     }
