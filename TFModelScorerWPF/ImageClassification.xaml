@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppWindow" xmlns:tfmodelscorerwpf="clr-namespace:TFModelScorerWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" Icon="/favicon.ico">
+        Title="Image Classifation - Université Clermont Auvergne" Height="450" Width="800" WindowStartupLocation="CenterScreen" Icon="/favicon.ico">
     <Window.Resources>
         <tfmodelscorerwpf:percentageConvert x:Key="percentageConvert"/>
     </Window.Resources>
