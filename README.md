@@ -141,3 +141,8 @@ When obtaining the prediction, we get an array of floats in the property `Predic
 ### Citation
 Training and prediction images 
 > *Wikimedia Commons, the free media repository.* Retrieved 10:48, October 17, 2018 from https://commons.wikimedia.org/w/index.php?title=Main_Page&oldid=313158208.
+
+
+```
+modification temporaire
+```
