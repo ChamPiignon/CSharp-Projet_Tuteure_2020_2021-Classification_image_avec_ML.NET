@@ -1,3 +1,7 @@
+# Video Presentation
+![alt text](docs/video.mp4)
+
+
 # Image Classification - Scoring sample
 
 | ML.NET version | API type          | Status                        | App Type    | Data type | Scenario            | ML Task                   | Algorithms                  |
