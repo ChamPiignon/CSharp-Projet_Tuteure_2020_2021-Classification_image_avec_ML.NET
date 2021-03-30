@@ -1,5 +1,5 @@
 # Video Presentation
-![alt text](docs/video.mp4)
+![alt text](docs/video.gif)
 
 
 # Image Classification - Scoring sample
